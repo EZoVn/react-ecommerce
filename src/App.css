@@ -1,0 +1,30 @@
+/* App.css */
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.add-task {
+  margin-top: 10px;
+}
+
+.add-task input {
+  width: 100%;
+  padding: 5px;
+}

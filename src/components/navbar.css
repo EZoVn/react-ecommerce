@@ -1,0 +1,30 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBar__left ul,
+.navBar__right {
+  display: flex;
+  align-items: center;
+}
+.navBar__left ul li {
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+ul {
+  list-style: none;
+}
+
+.icon-cart {
+  width: 30px;
+  margin-right: 20px;
+}
+.profil {
+  width: 70px;
+}
+.icon-cart,
+.profil,
+.navBar__left ul li:hover {
+  cursor: pointer;
+}
