@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .navBar__left ul,
 .navBar__right {
   display: flex;
@@ -15,7 +16,19 @@
 ul {
   list-style: none;
 }
-
+.cart {
+  position: relative;
+}
+.cart__visible {
+  position: absolute;
+  top: 70px;
+  right: -50%;
+  width: 150px;
+  height: 200px;
+  border: 2px solid black;
+  background-color: aliceblue;
+  padding: 10px;
+}
 .icon-cart {
   width: 30px;
   margin-right: 20px;
