@@ -1,7 +1,11 @@
+* {
+  box-sizing: border-box;
+}
 .navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 50px 20px;
 }
 
 .navBar__left ul,
@@ -34,7 +38,13 @@ ul {
   margin-right: 20px;
 }
 .profil {
-  width: 70px;
+  width: 50px;
+  transition: border 0.1s ease;
+}
+.profil:hover {
+  border: 3px solid orange;
+  border-radius: 50%;
+  /* box-sizing: border-box; */
 }
 .icon-cart,
 .profil,
