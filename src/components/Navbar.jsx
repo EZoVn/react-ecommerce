@@ -4,10 +4,6 @@ import "./navBar.css";
 const NavBar = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
 
-  // const handleClickCart = () => {
-  //   setIsCartVisible(!isCartVisible);
-  // };
-
   return (
     <div className="navBar">
       <div className="navBar__left">
@@ -23,7 +19,6 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navBar__right">
-        {/* <div className="cart" onClick={handleClickCart}> */}
         <div className="cart" onClick={() => setIsCartVisible(!isCartVisible)}>
           <img
             className="icon-cart"

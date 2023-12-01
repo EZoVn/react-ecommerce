@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./productPage.css";
 
 const ProductPage = () => {
@@ -9,6 +10,15 @@ const ProductPage = () => {
     "../images/image-product-4.jpg",
   ];
 
+  const [quantity, setQuantity] = useState(0);
+
+  const addQuantity = () => {
+    setQuantity(quantity + 1);
+    // si la quantity est a 0 break function
+  };
+  const lessQuantity = () => {
+    setQuantity(quantity - 1);
+  };
   return (
     <div className="product__page">
       <div className="product__page-images">
@@ -41,11 +51,11 @@ const ProductPage = () => {
         </p>
         <p className="oldPrice">$250.00</p>
         <div className="addCart">
-          <button>
+          <button onClick={lessQuantity}>
             <img src="./images/icon-minus.svg" alt="icon minus" />
           </button>
-          <span>{/* quantity */}</span>
-          <button>
+          <span>{quantity}</span>
+          <button onClick={addQuantity}>
             <img src="./images/icon-plus.svg" alt="icon plus" />
           </button>
           <button className="addToCart">
