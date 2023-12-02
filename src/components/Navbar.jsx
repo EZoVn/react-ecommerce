@@ -1,9 +1,7 @@
-import { useState } from "react";
 import "./navBar.css";
+import Cart from "./Cart";
 
 const NavBar = () => {
-  const [isCartVisible, setIsCartVisible] = useState(false);
-
   return (
     <div className="navBar">
       <div className="navBar__left">
@@ -19,20 +17,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navBar__right">
-        <div className="cart" onClick={() => setIsCartVisible(!isCartVisible)}>
-          <img
-            className="icon-cart"
-            src="./images/icon-cart.svg"
-            alt="Icon Cart"
-          />
-          {isCartVisible && (
-            <div className="cart__visible">
-              <h2>Cart</h2>
-              {/*Article Panier */}
-            </div>
-          )}
-          <div className="hidden"></div>
-        </div>
+        <Cart />
         <div>
           <img
             className="profil"
