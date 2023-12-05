@@ -18,6 +18,7 @@ const Cart = () => {
             <ul>
               {cart.map((item, index) => (
                 <li key={index}>
+                  <img src={item.image} alt="photo du produit" />
                   <p>{item.name}</p>
                   <p>Quantity: {item.quantity}</p>
                   <p>Price: ${item.price * item.quantity}</p>

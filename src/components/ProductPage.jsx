@@ -14,12 +14,15 @@ const ProductPage = () => {
     {
       id: 1,
       name: "Fall Limited Edition Sneakers",
+      image: "../images/image-product-1-thumbnail.jpg",
       price: 125.0,
       oldPrice: 250.0,
+      reduction: "25%",
     },
     {
       id: 2,
       name: "Fall Limited Edition Sneakers 2",
+      images: "../images/image-product-2-thumbnail.jpg",
       price: 250.0,
       oldPrice: 500.0,
       reduction: "50%",
@@ -31,9 +34,20 @@ const ProductPage = () => {
     const [quantity, setQuantity] = useState(0);
 
     const addToCart = () => {
-      const productToAdd = { ...product, quantity };
-      setCart([...cart, productToAdd]);
-      console.log("Cart Updated:", cart);
+      if (quantity > 0) {
+        const existingIndex = cart.findIndex((item) => item.id === product.id);
+        console.log(existingIndex);
+        if (existingIndex !== -1) {
+          const updateCart = [...cart];
+          updateCart[existingIndex].quantity += quantity;
+          console.log("existing index");
+          setCart(updateCart);
+        } else {
+          const productToAdd = { ...product, quantity };
+          setCart([...cart, productToAdd]);
+          console.log("Cart Updated with new product:", cart);
+        }
+      }
     };
 
     return (
@@ -97,29 +111,6 @@ const ProductPage = () => {
             <Product product={product} />
           </div>
         ))}
-
-        {/* <h2>Fall Limited Edition Sneakers</h2>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything
-          the weather can offer.
-        </p>
-        <p className="price">
-          $125.00 <span className="reduction">50%</span>
-        </p>
-        <p className="oldPrice">$250.00</p> */}
-        {/* </div> */}
-        {/* <h2>Fall Limited Edition Sneakers</h2>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything
-          the weather can offer.
-        </p>
-        <p className="price">
-          $125.00 <span className="reduction">50%</span>
-        </p>
-        <p className="oldPrice">$250.00</p> */}
-        {/* <Product /> */}
       </div>
     </div>
   );
