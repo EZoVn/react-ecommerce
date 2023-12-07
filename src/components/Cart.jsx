@@ -3,8 +3,15 @@ import "./navBar.css";
 import { CartContext } from "./CartContext.jsx";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
   const [isCartVisible, setIsCartVisible] = useState(false);
+
+  const removeArticle = (index) => {
+    const newCart = [...cart];
+    console.log("cart : ", newCart, "index", index);
+    newCart.splice(index, 1);
+    setCart(newCart);
+  };
 
   return (
     <div className="cart">
@@ -36,13 +43,17 @@ const Cart = () => {
                       <br />${item.price} x {item.quantity}
                       <strong> ${item.price * item.quantity}</strong>
                     </p>
-                    <img
-                      className="cart__visible--delete"
-                      src="./images/icon-delete.svg"
-                      alt="icon delete"
-                    />
+                    <button onClick={() => removeArticle(index)}>
+                      <img
+                        className="cart__visible--delete"
+                        src="./images/icon-delete.svg"
+                        alt="icon delete"
+                      />
+                    </button>
                   </div>
-                  <button className="button">Checkout</button>
+                  <div className="flex">
+                    <button className="button checkout">Checkout</button>
+                  </div>
                 </li>
               ))}
             </ul>

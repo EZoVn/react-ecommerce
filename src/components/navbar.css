@@ -72,8 +72,16 @@
 .cart__visible--list {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
-
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.checkout {
+  width: 80%;
+  margin: 1rem;
+}
 .icon-cart {
   width: 30px;
   margin-right: 20px;

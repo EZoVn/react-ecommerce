@@ -52,23 +52,30 @@ const ProductPage = () => {
 
     return (
       <div className="addCart">
-        <button
-          className="addCart--quantity"
-          onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 0)}
-        >
-          <img src="./images/icon-minus.svg" alt="icon minus" />
-        </button>
-        <span>{quantity}</span>
-        <button
-          className="addCart--quantity"
-          onClick={() => setQuantity(quantity + 1)}
-        >
-          <img src="./images/icon-plus.svg" alt="icon plus" />
-        </button>
-        <button className="button addToCart" onClick={addToCart}>
-          <img src="./images/icon-cart.svg" alt="icon cart" />
-          Add to cart
-        </button>
+        <div className="addCart__container">
+          <button
+            className="addCart__button--quantity"
+            onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 0)}
+          >
+            <img src="./images/icon-minus.svg" alt="icon minus" />
+          </button>
+          <span>{quantity}</span>
+          <button
+            className="addCart__button--quantity"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            <img src="./images/icon-plus.svg" alt="icon plus" />
+          </button>
+        </div>
+        <div className="addCart__actions">
+          <button
+            className="button addCart__button--addToCart"
+            onClick={addToCart}
+          >
+            <img src="./images/icon-cart.svg" alt="icon cart" />
+            Add to cart
+          </button>
+        </div>
       </div>
     );
   }
