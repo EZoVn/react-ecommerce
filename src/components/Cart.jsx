@@ -7,8 +7,15 @@ const Cart = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
 
   return (
-    <div className="cart" onClick={() => setIsCartVisible(!isCartVisible)}>
-      <img className="icon-cart" src="./images/icon-cart.svg" alt="Icon Cart" />
+    <div className="cart">
+      <img
+        onClick={() => setIsCartVisible(!isCartVisible)}
+        className="icon-cart"
+        src="./images/icon-cart.svg"
+        alt="Icon Cart"
+      />
+      {/* regler laffichage si length > 0 */}
+      <span className="cart__nbrArticle">{cart.length}</span>
       {isCartVisible && (
         <div className="cart__visible">
           <h2>Cart</h2>
@@ -17,11 +24,25 @@ const Cart = () => {
           ) : (
             <ul>
               {cart.map((item, index) => (
-                <li key={index}>
-                  <img src={item.image} alt="photo du produit" />
-                  <p>{item.name}</p>
-                  <p>Quantity: {item.quantity}</p>
-                  <p>Price: ${item.price * item.quantity}</p>
+                <li className="cart__visible--li" key={index}>
+                  <div className="cart__visible--list">
+                    <img
+                      className="cart__visible--img"
+                      src={item.image}
+                      alt="photo du produit"
+                    />
+                    <p>
+                      {item.name}
+                      <br />${item.price} x {item.quantity}
+                      <strong> ${item.price * item.quantity}</strong>
+                    </p>
+                    <img
+                      className="cart__visible--delete"
+                      src="./images/icon-delete.svg"
+                      alt="icon delete"
+                    />
+                  </div>
+                  <button className="button">Checkout</button>
                 </li>
               ))}
             </ul>

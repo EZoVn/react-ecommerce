@@ -1,8 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/* RESET */
+
 * {
   font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  border: none;
 }
 
+/* VARIABLES */
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --PaleOrange: hsl(25, 100%, 94%);
+  --VeryDarkBlue: hsl(220, 13%, 13%);
+  --DarkGrayishBlue: hsl(219, 9%, 45%);
+  --GrayishBlue: hsl(220, 14%, 75%);
+  --LightGrayisBlue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --black-with-opacity: hsla(0, 0%, 0%, 0.75);
+}
+.button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  background-color: var(--Orange);
+  color: var(--White);
+  transition: 0.3s ease;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: hsla(26, 100%, 65%, 0.8);
+  box-shadow: 0 0 10px var(--PaleOrange);
+}
 /* App.css */
 .app {
   max-width: 600px;

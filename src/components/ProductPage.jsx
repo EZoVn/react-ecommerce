@@ -65,7 +65,7 @@ const ProductPage = () => {
         >
           <img src="./images/icon-plus.svg" alt="icon plus" />
         </button>
-        <button className="addToCart" onClick={addToCart}>
+        <button className="button addToCart" onClick={addToCart}>
           <img src="./images/icon-cart.svg" alt="icon cart" />
           Add to cart
         </button>

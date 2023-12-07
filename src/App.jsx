@@ -50,8 +50,18 @@ function App() {
     const [quantity, setQuantity] = useState(0);
 
     const addToCart = () => {
-      const productToAdd = { ...product, quantity };
-      setCart([...cart, productToAdd]);
+      const existingIndex = cart.findIndex(
+        (item) => item.name === product.name
+      );
+      if (existingIndex !== -1) {
+        console.log("existe deja");
+        const updateCart = [...cart];
+        updateCart[existingIndex].quantity += quantity;
+        setCart(updateCart);
+      } else {
+        const productToAdd = { ...product, quantity };
+        setCart([...cart, productToAdd]);
+      }
     };
 
     return (
