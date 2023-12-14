@@ -1,15 +1,11 @@
 import { useContext, useState } from "react";
 import "./productPage.css";
 import { CartContext } from "./CartContext.jsx";
-const ProductPage = () => {
-  const productImages = [
-    "../images/image-product-1.jpg",
-    "../images/image-product-1.jpg",
-    "../images/image-product-2.jpg",
-    "../images/image-product-3.jpg",
-    "../images/image-product-4.jpg",
-  ];
 
+// import { Swiper, SwiperSlide } from "swiper/react";
+import ThumbnailCarousel from "./Thumbnails.jsx";
+
+const ProductPage = () => {
   const products = [
     {
       id: 1,
@@ -22,7 +18,7 @@ const ProductPage = () => {
     {
       id: 2,
       name: "Fall Limited Edition Sneakers 2",
-      images: "../images/image-product-2-thumbnail.jpg",
+      image: "../images/image-product-3-thumbnail.jpg",
       price: 250.0,
       oldPrice: 500.0,
       reduction: "50%",
@@ -82,7 +78,41 @@ const ProductPage = () => {
 
   return (
     <div className="product__page">
-      <div className="product__page-images">
+      <ThumbnailCarousel />
+      {/* <div className="product__page-images">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="image thumbnail"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="image thumbnail"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="image thumbnail"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="image thumbnail"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div> */}
+      {/* <div className="product__page-images">
         <img
           className="main-image"
           src={productImages[0]}
@@ -98,7 +128,7 @@ const ProductPage = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
       <div className="product__info">
         <h1 className="product__info--title">Sneaker Company</h1>
 
