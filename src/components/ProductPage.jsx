@@ -6,6 +6,8 @@ import { CartContext } from "./CartContext.jsx";
 import ThumbnailCarousel from "./Thumbnails.jsx";
 
 const ProductPage = () => {
+  // const [activeThumb, setActiveThumb] = useState(null);
+
   const products = [
     {
       id: 1,
@@ -79,59 +81,8 @@ const ProductPage = () => {
   return (
     <div className="product__page">
       <ThumbnailCarousel />
-      {/* <div className="product__page-images">
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <SwiperSlide>
-            <img
-              src="./images/image-product-1-thumbnail.jpg"
-              alt="image thumbnail"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="./images/image-product-2-thumbnail.jpg"
-              alt="image thumbnail"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="./images/image-product-3-thumbnail.jpg"
-              alt="image thumbnail"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="./images/image-product-4-thumbnail.jpg"
-              alt="image thumbnail"
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div> */}
-      {/* <div className="product__page-images">
-        <img
-          className="main-image"
-          src={productImages[0]}
-          alt="image produit"
-        />
-        <div className="thumbnail-container">
-          {productImages.slice(1).map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Image produit ${index + 1}`}
-              className="thumbnail"
-            />
-          ))}
-        </div>
-      </div> */}
       <div className="product__info">
         <h1 className="product__info--title">Sneaker Company</h1>
-
         {products.map((product) => (
           <div key={product.id}>
             <h2>{product.name}</h2>
