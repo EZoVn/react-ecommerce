@@ -1,18 +1,21 @@
 .product__page {
+  position: relative;
   display: flex;
   justify-content: space-around;
   margin: 40px;
-  position: relative;
 }
 .product__page-images {
-  max-width: 50%;
+  /* position: relative; */
+  max-width: 40%;
   margin-right: 50px;
   z-index: 6;
 }
 .zoom {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
 }
 .background-overlay {
   position: fixed;
@@ -22,8 +25,7 @@
   height: 100%;
   background: rgba(21, 21, 21, 0.8);
   filter: blur(5px);
-  z-index: -1;
-  /* transform: translate(50%, 50%); */
+  z-index: 5;
 }
 
 .product__info--title {
