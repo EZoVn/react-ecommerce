@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./main.css";
+import "./assets/main.css";
 
 import Task from "./components/Task";
 

@@ -1,4 +1,4 @@
-import "../assets/navBar.css";
+import "../assets/navbar.css";
 import Cart from "./Cart";
 
 const NavBar = () => {

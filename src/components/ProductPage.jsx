@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import "../assets/productPages.css";
+import "../assets/productPage.css";
 import { CartContext } from "./CartContext.jsx";
 
 // import { Swiper, SwiperSlide } from "swiper/react";
