@@ -51,13 +51,13 @@ const Cart = () => {
                       />
                     </button>
                   </div>
-                  <div className="flex">
-                    <button className="button checkout">Checkout</button>
-                  </div>
                 </li>
               ))}
             </ul>
           )}
+          <div className="flex">
+            <button className="button checkout">Checkout</button>
+          </div>
         </div>
       )}
     </div>
