@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import "./navbar.css";
+import "../assets/navbar.css";
 import { CartContext } from "./CartContext.jsx";
 
 const Cart = () => {
