@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { Thumbs } from "swiper/modules";
+import { Thumbs, Navigation } from "swiper/modules";
 
 const productImages = [
   "../images/image-product-1.jpg",
@@ -34,9 +34,10 @@ const ImagesProduct = ({
       <div className={`product__page-images ${showThumbs ? "zoom" : ""}`}>
         <Swiper
           spaceBetween={10}
-          modules={Thumbs}
+          modules={[Thumbs, Navigation]}
           thumbs={{ swiper: "thumbs" }}
           onSwiper={onSwiper}
+          Navigation={true}
           className="main-image"
         >
           {productImages.slice(0).map((image, index) => (
@@ -102,6 +103,7 @@ const ThumbnailCarousel = () => {
         showThumbs={showThumbs}
         handleClickToImage={handleClickToImage}
         onSwiper={(swiper) => setThumbsSwiper(swiper)}
+        // Navigation={true}
       />
       {showThumbs && (
         <ImagesProduct
